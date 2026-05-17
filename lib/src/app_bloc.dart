@@ -8,8 +8,8 @@ class AppBloc {
   static final bookmarksCubit = BookmarksCubit();
 
   static final List<BlocProvider> providers = [
-    BlocProvider<QuranCubit>(create: (context) => quranCubit),
-    BlocProvider<BookmarksCubit>(create: (context) => bookmarksCubit),
+    BlocProvider<QuranCubit>.value(value: quranCubit),
+    BlocProvider<BookmarksCubit>.value(value: bookmarksCubit),
   ];
 
   static void dispose() {
