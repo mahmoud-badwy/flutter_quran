@@ -36,7 +36,7 @@ class BookmarksCubit extends Cubit<List<Bookmark>> {
     emit(bookmarks);
   }
 
-  saveBookmark({
+  void saveBookmark({
     required int ayahId,
     required int page,
     required int bookmarkId,
@@ -55,7 +55,7 @@ class BookmarksCubit extends Cubit<List<Bookmark>> {
     }
   }
 
-  removeBookmark(int bookmarkId, {bool saveBookmark = true}) {
+  void removeBookmark(int bookmarkId, {bool saveBookmark = true}) {
     final bookmarkIndex =
         bookmarks.indexWhere((bookmark) => bookmark.id == bookmarkId);
     if (bookmarkIndex != -1) {

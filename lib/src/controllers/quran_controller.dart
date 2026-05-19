@@ -23,7 +23,7 @@ class QuranCubit extends Cubit<List<QuranPage>> {
 
   PageController _pageController = PageController();
 
-  Future<void> loadQuran({quranPages = QuranRepository.hafsPagesNumber}) async {
+  Future<void> loadQuran({int quranPages = QuranRepository.hafsPagesNumber}) async {
     lastPage = _quranRepository.getLastPage() ?? 1;
     if (lastPage != 0) {
       _pageController = PageController(initialPage: lastPage - 1);
@@ -113,12 +113,12 @@ class QuranCubit extends Cubit<List<QuranPage>> {
     }
   }
 
-  saveLastPage(int lastPage) {
+  void saveLastPage(int lastPage) {
     this.lastPage = lastPage;
     _quranRepository.saveLastPage(lastPage);
   }
 
-  animateToPage(int page) {
+  void animateToPage(int page) {
     if (_pageController.hasClients) {
       _pageController.animateToPage(page,
           duration: const Duration(milliseconds: 500), curve: Curves.easeOut);
@@ -127,5 +127,5 @@ class QuranCubit extends Cubit<List<QuranPage>> {
     }
   }
 
-  get pageController => _pageController;
+  PageController get pageController => _pageController;
 }

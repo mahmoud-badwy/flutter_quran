@@ -28,9 +28,9 @@ class _SearchScreenState extends State<SearchScreen> {
               children: [
                 TextField(
                   onChanged: (txt) {
-                    final _ayahs = FlutterQuran().search(txt);
+                    final ayahsResult = FlutterQuran().search(txt);
                     setState(() {
-                      ayahs = [..._ayahs];
+                      ayahs = [...ayahsResult];
                     });
                   },
                   decoration: const InputDecoration(
