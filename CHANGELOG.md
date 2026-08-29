@@ -22,3 +22,12 @@
 
 * **Fixing Basmallah in Surah Al-Qadr and Surah At-Tīn**
 * **Disable Material 3 in Quran Screen for better Quran Text displaying**
+
+
+## 0.0.5
+
+* **Fixing BlocProvider initialization to fix state error when navigating out from the Quran Screen while bookmark operation is still processing**
+* **Upgrading to Flutter 3.44.0**
+* **Updating deprecated values**
+* **Updating packages we depend on**
+
